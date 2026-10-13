@@ -9,6 +9,30 @@ main {
     width: 100%;
     padding: 1rem;
 
+    @keyframes halo {
+        0% {
+            box-shadow: none;
+        }
+        50% {
+            box-shadow: 0 0 15px 10px $color-oscuro;
+        }
+        100% {
+            box-shadow: none;
+        }
+    }
+    
+    @keyframes luz-boton {
+        0% {
+            box-shadow: none;
+        }
+        50% {
+            box-shadow: 0 0 15px 10px $color-claro;
+        }
+        100% {
+            box-shadow: none;
+        }
+    }
+
     .hero {
         background-color: $color-hero;
         color: $color-claro;
@@ -16,6 +40,10 @@ main {
         padding: 1rem;
         width: 100%;
         border-radius: $radio-borde;
+        perspective: 1000px;
+        animation-name: halo;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
 
         h2 {
             font-size: 1.8rem;
@@ -27,6 +55,8 @@ main {
             padding: 1rem;
             border-radius: $radio-borde;
             transition: all 0.5s;
+            animation: luz-boton 1s ease-out 1s;
+            animation-delay: 0.5s;
 
             &:visited {
                 color: $color-tarjetas;
@@ -34,10 +64,12 @@ main {
 
             &:hover {
                 background-color: $color-boton-hover;
+                transform: $hover-boton;
             }
 
             &:active {
                 text-decoration: underline;
+                transform: $active;
             }
         }
     }

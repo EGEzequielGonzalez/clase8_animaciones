@@ -27,3 +27,8 @@ $radio-imagen: 4px;
 // Breakpoints
 $tablet: 768px;
 $desktop: 1024px;
+
+// Transformación
+$hover-nav: scale(1.15);
+$hover-boton: translate3d(10px, -8px, 15px);
+$active: scale(0.8);

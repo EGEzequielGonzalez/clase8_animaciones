@@ -29,10 +29,12 @@ header {
         &:hover {
             background-color: $color-hover;
             color: $color-claro;
+            transform: $hover-nav;
         }
 
         &:active {
             text-decoration: underline;
+            transform: $active;
         }
     }
 }

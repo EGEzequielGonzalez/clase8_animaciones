@@ -3,7 +3,7 @@
 @use "../utilities/mixin" as *;
 
 .tarjeta {
-    background-color: $color-tarjetas;
+    background: linear-gradient($color-tarjetas, $color-blanco);
     width: 100%;
     height: 100%;
     @include flex(column, null, center, 0.7rem);
@@ -24,6 +24,11 @@
         width: 100%;
         height: 200px;
         object-fit: cover;
+        transition: transform 1s;
+
+        &:hover{
+            transform: scale(1.1);
+        } 
     }
 }
 

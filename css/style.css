@@ -81,9 +81,11 @@ header .link-menu:visited {
 header .link-menu:hover {
   background-color: rgba(253, 33, 33, 0.342);
   color: rgb(227, 234, 240);
+  transform: scale(1.15);
 }
 header .link-menu:active {
   text-decoration: underline;
+  transform: scale(0.8);
 }
 
 @media (min-width: 1024px) {
@@ -105,6 +107,28 @@ main {
   width: 100%;
   padding: 1rem;
 }
+@keyframes halo {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 15px 10px rgb(109, 29, 29);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+@keyframes luz-boton {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 15px 10px rgb(227, 234, 240);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
 main .hero {
   background-color: rgb(109, 29, 29);
   color: rgb(227, 234, 240);
@@ -116,6 +140,10 @@ main .hero {
   padding: 1rem;
   width: 100%;
   border-radius: 5px;
+  perspective: 1000px;
+  animation-name: halo;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
 }
 main .hero h2 {
   font-size: 1.8rem;
@@ -126,15 +154,19 @@ main .hero a {
   padding: 1rem;
   border-radius: 5px;
   transition: all 0.5s;
+  animation: luz-boton 1s ease-out 1s;
+  animation-delay: 0.5s;
 }
 main .hero a:visited {
   color: rgb(255, 212, 184);
 }
 main .hero a:hover {
   background-color: rgb(236, 95, 95);
+  transform: translate3d(10px, -8px, 15px);
 }
 main .hero a:active {
   text-decoration: underline;
+  transform: scale(0.8);
 }
 
 @media (min-width: 1024px) {
@@ -532,7 +564,7 @@ footer ul {
   }
 }
 .tarjeta {
-  background-color: rgb(255, 212, 184);
+  background: linear-gradient(rgb(255, 212, 184), white);
   width: 100%;
   height: 100%;
   display: flex;
@@ -554,6 +586,10 @@ footer ul {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  transition: transform 1s;
+}
+.tarjeta img:hover {
+  transform: scale(1.1);
 }
 
 .seccion-tarjetas {
